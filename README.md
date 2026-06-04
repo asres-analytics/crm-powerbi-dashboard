@@ -1,36 +1,30 @@
-# 📊 Donor CRM Analytics Dashboard
+# Donor CRM Analytics Dashboard
 
 ---
+## Overview
 
-##  Overview
+This project analyzes donor CRM data to uncover insights into donor behavior, engagement, fundraising performance, and donor segmentation.  
 
-This project performs end-to-end CRM data analysis to uncover insights into donor behavior, engagement, and revenue contribution.
+The analysis transforms raw donor data into actionable business intelligence using data cleaning, exploratory data analysis (EDA), and an interactive Power BI dashboard.
 
-The workflow includes:
-- Data cleaning and preprocessing using Python (Pandas)
-- Feature engineering
-- Customer segmentation
-- Exploratory data analysis (EDA)
-- Preparing data for Power BI dashboard visualization
-
+---
 
 ##  Objectives
 
 - Clean and preprocess CRM donor data  
-- Analyze total revenue and donation behavior  
-- Identify high-value customers  
-- Evaluate engagement impact on donations  
-- Segment customers based on contribution  
-- Prepare dataset for Power BI dashboard  
+- Analyze donation and fundraising trends  
+- Identify high-value donors  
+- Evaluate donor engagement levels  
+- Assess the impact of event participation  
+- Segment donors based on contribution value  
+- Build interactive Power BI dashboards  
 
+---
 
 ##  Dataset Information
 
-###  Dataset Source
-
-The dataset used in this project is sourced from Kaggle:
-
-- [Customer Relationship Management (CRM) Dataset](https://www.kaggle.com/datasets/gaurobsaha/customer-relationship-management-dataset)
+### Dataset Type
+[CRM Donor Data](https://www.kaggle.com/datasets/gaurobsaha/customer-relationship-management-dataset) 
 
 ###  Key Fields
 
@@ -39,8 +33,11 @@ The dataset used in this project is sourced from Kaggle:
 | DonorID            | Unique donor identifier    |
 | FirstName          | Donor first name           |
 | LastName           | Donor last name            |
+| Email              | Contact email              |
+| Phone              | Contact number             |
 | City               | Donor city                 |
 | State              | Donor state                |
+| ZipCode            | Postal code                |
 | LastDonationDate   | Most recent donation date  |
 | TotalGifts         | Total number of donations  |
 | TotalAmountDonated | Total donation amount      |
@@ -49,131 +46,144 @@ The dataset used in this project is sourced from Kaggle:
 
 ---
 
-## Tools Used
+##  Tools Used
 
-- Python (Pandas, NumPy)
-- Matplotlib & Seaborn
-- Power BI
-- Excel
+- Microsoft Excel  
+- SQL  
+- Python (Pandas, NumPy, Matplotlib)  
+- Power BI  
 - Git & GitHub  
 
+---
 
+## Data Cleaning
 
-##  Data Processing
+The dataset was cleaned and prepared by:
 
-The dataset was prepared by:
-
-- Removing duplicates  
 - Handling missing values  
-- Converting date fields to datetime  
-- Creating new features:
-  - Year  
-  - Month  
-  - Segment (High / Medium / Low)  
+- Removing duplicate records  
+- Standardizing date formats  
+- Validating donor information  
+- Correcting inconsistent entries  
 
+---
 
-## Analysis Performed
+##  Exploratory Data Analysis
 
 ###  Revenue Analysis
-- Total revenue generated  
-- Overall donation performance  
+- Total donation revenue  
+- Average donation amount  
+- Top contributing donors  
+- Revenue distribution  
 
+---
 
+###  Donor Segmentation
 
-###  Customer Segmentation
+| Segment  | Donation Amount   |
+|----------|------------------|
+| Platinum | Above $15,000     |
+| Gold     | $10,000 – $15,000 |
+| Silver   | $5,000 – $10,000  |
+| Bronze   | Below $5,000      |
 
-Customers were grouped based on donation value:
+---
 
-| Segment      | Donation Amount     |
-|--------------|--------------------|
-| High Value   | Above $15,000       |
-| Medium Value | $7,000 – $15,000    |
-| Low Value    | Below $7,000        |
+###  Engagement Analysis
+- Engagement score distribution  
+- Donation amount by engagement level  
+- High-value donor identification  
 
+---
 
+###  Event Participation Analysis
+- Participant vs non-participant comparison  
+- Impact of events on donation behavior  
 
-### Engagement Analysis
-- Relationship between engagement score and donation  
-- Identification of high-value engaged customers  
+---
 
+###  Geographic Analysis
+- Donations by state  
+- Donor distribution by location  
+- Regional fundraising performance  
 
+---
 
-### Top Donors Analysis
-- Identified top contributors based on total donation  
-- Highlighted high-value customers driving revenue  
+##  Dashboard Features
 
+###  Executive Summary
+- Total Revenue  
+- Total Donors  
+- Average Donation  
+- Average Engagement Score  
 
+---
 
-### Revenue by Segment
-- Analyzed contribution of each customer segment  
-- Compared revenue distribution across segments  
+###  Donor Insights
+- Top Donors  
+- Donor Segmentation  
+- Engagement Analysis  
+- Event Participation Impact  
 
+---
 
+###  Geographic Analysis
+- Revenue by State  
+- Donor Distribution Map  
+- Regional Performance  
+
+---
 
 ##  Key Insights
 
-- High-value customers generate the majority of total revenue  
-- A small group of customers contributes most of the revenue  
-- Higher engagement is associated with higher donation amounts  
-- Customer segmentation clearly identifies valuable customer groups  
+- High-engagement donors contribute significantly more revenue  
+- Event participants donate more frequently  
+- A small group of donors generates most revenue  
+- Geographic regions show different fundraising performance  
 
+---
 
+##  Business Impact
 
-## Business Impact
+This project helps organizations to:
 
-This project helps organizations:
-
-- Improve customer retention strategies  
-- Identify and target high-value customers  
+- Improve donor retention  
+- Identify high-value donors  
 - Increase fundraising efficiency  
-- Make data-driven decisions  
-- Enhance customer engagement strategies  
+- Support data-driven decision-making  
+- Enhance engagement strategies  
 
+---
 
+##  Dashboard Preview
+(Add your Power BI screenshots here later)
 
-## Dashboard Preview
-
-(Add Power BI screenshots here after dashboard creation)
-
-images/dashboard-overview.png  
-images/customer-segmentation.png  
-images/engagement-analysis.png  
+![Dashboard Overview](images/dashboard-overview.png)
+![Donor Insights](images/donor-insights.png)
+![Geographic Analysis](images/geographic-analysis.png)
 
 ---
 
 ##  Project Structure
-
-
 ```
 crm-powerbi-dashboard/
 │
 ├── data/
 │   ├── raw/
-│   │   └── CRM_Donor_Simulation_Dataset (2).csv
-│   │
 │   └── processed/
-│       └── cleaned_crm_data.csv
 │
 ├── notebooks/
-│   └── crm_analysis.ipynb
-│
 ├── dashboard/
-│   └── (Power BI files will be added here)
-│
 ├── images/
-│   └── (Dashboard screenshots will be added here)
-│
-├── .gitignore
-├── README.md
-
+└── README.md
 ```
-
 ## 👨‍💻 Author
 **Asres Gamu Yelia**
-### Data Analyst | Power BI Developer | SQL & Excel Specialist
+### Power BI Specialist | KPI Dashboards & Business Insights
 
-## Connect With Me
+##  Connect With Me
 
 [LinkedIn](https://www.linkedin.com/in/asres-analytics)
 
 [Hire me](https://www.upwork.com/freelancers/~013847c2b7252ddb3f)
+
