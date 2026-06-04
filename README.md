@@ -179,7 +179,7 @@ crm-powerbi-dashboard/
 ```
 ## 👨‍💻 Author
 **Asres Gamu Yelia**
-### Data Analyst | Power BI Developer | SQL & Excel Specialist
+### Power BI Specialist | KPI Dashboards & Business Insights
 
 ##  Connect With Me
 
