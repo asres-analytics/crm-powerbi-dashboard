@@ -165,7 +165,7 @@ This project helps organizations to:
 ---
 
 ##  Project Structure
-
+```
 crm-powerbi-dashboard/
 │
 ├── data/
@@ -176,7 +176,7 @@ crm-powerbi-dashboard/
 ├── dashboard/
 ├── images/
 └── README.md
-
+```
 ## 👨‍💻 Author
 **Asres Gamu Yelia**
 ### Data Analyst | Power BI Developer | SQL & Excel Specialist
