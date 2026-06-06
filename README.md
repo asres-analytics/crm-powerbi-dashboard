@@ -1,77 +1,87 @@
-# CRM Donor Analytics & Power BI Dashboard
+# Donor CRM Analytics & Power BI Dashboard
 
-## Summary
+## Project Overview
 
-In this project I analyzed a CRM donor dataset, cleaned and feature-engineered the data using Python, and built a Power BI dashboard to surface revenue, donor-segmentation, engagement, and geographic insights. The final output is a cleaned CSV that I use as the data source for the dashboard.
+In this project, I worked with a CRM donor dataset to analyze customer behavior, identify revenue patterns, and build an interactive Power BI dashboard.
 
-## What I did
+I cleaned and transformed the data using Python, created new features for analysis, and designed a dashboard that highlights key insights such as customer segmentation, engagement, and geographic performance.
 
-- Cleaned raw donor data (date parsing, duplicates, basic validation)
-- Converted `LastDonationDate` to datetime and extracted `Year` and `Month`
-- Created a `Segment` column based on `TotalAmountDonated` (High, Medium, Low)
-- Calculated KPIs and exploratory metrics (total revenue, top donors, revenue by segment)
-- Exported the processed dataset for Power BI and built interactive visuals
+## What I Did
 
-## Tools
+- Cleaned and prepared raw donor data (date formatting, removing duplicates)
+- Extracted **Year** and **Month** from donation dates for trend analysis
+- Created a **Customer Segment** column (High, Medium, Low) based on donation amounts
+- Analyzed revenue distribution, donor activity, and top contributors
+- Built a Power BI dashboard with interactive visuals and filters
 
-- Python (pandas, numpy)
-- Power BI (report and visuals)
-- Git for version control
+## Dashboard Features
 
-## Power BI Dashboard (what I built)
+- KPI Cards: Total Revenue, Customers, Donations, Engagement  
+- Revenue Trend Over Time (Monthly)  
+- Revenue by Customer Segment  
+- Customer Activity (Total Gifts) by Segment  
+- Revenue by State  
+- Top Donors Table  
+- Interactive Filters (Segment, Year)  
 
-- KPI cards: Revenue, Customers, Donations, Engagement
-- Revenue trend over time (monthly) using `Year` and `Month`
-- Revenue by customer segment (`Segment`)
-- Customer activity (Total Gifts) by segment
-- Revenue by state (choropleth / bar chart)
-- Top donors table (top 10 by `TotalAmountDonated`)
-- Filters / slicers: `Segment` and `Year` for interactive exploration
+## Key Insights
 
-## Key steps and why I did them
+- **Revenue is highly concentrated**: High-value donors contribute most of the revenue  
+- **Monthly trends fluctuate**: Identifying peak periods helps plan campaigns  
+- **Engagement matters**: More engaged donors tend to give more  
+- **Geographic patterns**: A few states generate a large share of revenue  
 
-- Data cleaning: I standardized dates and removed obvious duplicates so visuals and aggregates are reliable.
-- Feature engineering: I added `Year` and `Month` to speed up time-based aggregation in Power BI and to avoid heavy DAX transformations.
-- Segmentation: I created `High`, `Medium`, and `Low` segments so stakeholders can focus on retention and growth strategies for the segments that matter most.
-- Exporting: I saved the processed CSV so the Power BI report can load a stable, reproducible dataset.
+## Tools Used
 
-## Key insights
+- Python (pandas, numpy)  
+- Power BI  
+- Git & GitHub  
 
-- Revenue concentration: High-value donors generate the majority of revenue — retaining this small group is high priority.
-- Time trends: Monthly revenue shows clear peaks and troughs that inform campaign timing and seasonal planning.
-- Engagement correlation: Donors with higher engagement scores donate more on average, so increasing engagement should raise revenue.
-- Geographic patterns: A handful of states account for a disproportionate share of revenue, highlighting regional focus areas.
+## Dashboard Preview
 
-## How to reproduce
+Below is the Power BI dashboard created from the CRM dataset:
 
-1. Install Python dependencies (if not already available):
+![Dashboard](images/dashboard.png)
 
-```powershell
-pip install pandas numpy
+## 🔁 How to Reproduce
+
+1. Open and run the analysis notebook:
+
+```bash
+notebooks/crm_analysis.ipynb
 ```
 
-2. Run the notebook to regenerate the processed CSV:
+2. This will generate the cleaned dataset:
 
-```powershell
-# from the project root
-python -m pip install -r requirements.txt  # optional if you maintain requirements
-# open and run notebooks/crm_analysis.ipynb in Jupyter or VS Code
+```bash
+data/processed/cleaned_crm_data.csv
 ```
 
-3. In Power BI Desktop: `Get Data` → `Text/CSV` → select `data/processed/cleaned_crm_data.csv` and build visuals.
+3. Load the dataset into Power BI:
 
-## Project structure
+- Open **Power BI Desktop**
+- Click **Get Data → Text/CSV**
+- Select the cleaned CSV file
+- Build visuals based on the dataset
+
+---
+
+##  Project Structure
+
 ```
 crm-powerbi-dashboard/
 ├── data/
-│   ├── raw/                  # original dataset
-│   └── processed/            # cleaned output (cleaned_crm_data.csv)
-├── notebooks/                # analysis notebook
-├── dashboard/                # Power BI files and report
-├── images/                   # screenshots and preview images
+│   ├── raw/
+│   └── processed/
+├── notebooks/
+├── dashboard/
+├── images/
 └── README.md
 ```
 
-## Author
-Asres Gamu Yelia — Power BI Specialist | KPI Dashboards & Business Insights
 
+## Author
+
+**Asres Gamu Yelia** 
+ 
+*Power BI Specialist | Data Analytics & Business Insights*
