@@ -1,189 +1,77 @@
-# Donor CRM Analytics Dashboard
+# CRM Donor Analytics & Power BI Dashboard
 
----
-## Overview
+## Summary
 
-This project analyzes donor CRM data to uncover insights into donor behavior, engagement, fundraising performance, and donor segmentation.  
+In this project I analyzed a CRM donor dataset, cleaned and feature-engineered the data using Python, and built a Power BI dashboard to surface revenue, donor-segmentation, engagement, and geographic insights. The final output is a cleaned CSV that I use as the data source for the dashboard.
 
-The analysis transforms raw donor data into actionable business intelligence using data cleaning, exploratory data analysis (EDA), and an interactive Power BI dashboard.
+## What I did
 
----
+- Cleaned raw donor data (date parsing, duplicates, basic validation)
+- Converted `LastDonationDate` to datetime and extracted `Year` and `Month`
+- Created a `Segment` column based on `TotalAmountDonated` (High, Medium, Low)
+- Calculated KPIs and exploratory metrics (total revenue, top donors, revenue by segment)
+- Exported the processed dataset for Power BI and built interactive visuals
 
-##  Objectives
+## Tools
 
-- Clean and preprocess CRM donor data  
-- Analyze donation and fundraising trends  
-- Identify high-value donors  
-- Evaluate donor engagement levels  
-- Assess the impact of event participation  
-- Segment donors based on contribution value  
-- Build interactive Power BI dashboards  
+- Python (pandas, numpy)
+- Power BI (report and visuals)
+- Git for version control
 
----
+## Power BI Dashboard (what I built)
 
-##  Dataset Information
+- KPI cards: Revenue, Customers, Donations, Engagement
+- Revenue trend over time (monthly) using `Year` and `Month`
+- Revenue by customer segment (`Segment`)
+- Customer activity (Total Gifts) by segment
+- Revenue by state (choropleth / bar chart)
+- Top donors table (top 10 by `TotalAmountDonated`)
+- Filters / slicers: `Segment` and `Year` for interactive exploration
 
-### Dataset Type
-[CRM Donor Data](https://www.kaggle.com/datasets/gaurobsaha/customer-relationship-management-dataset) 
+## Key steps and why I did them
 
-###  Key Fields
+- Data cleaning: I standardized dates and removed obvious duplicates so visuals and aggregates are reliable.
+- Feature engineering: I added `Year` and `Month` to speed up time-based aggregation in Power BI and to avoid heavy DAX transformations.
+- Segmentation: I created `High`, `Medium`, and `Low` segments so stakeholders can focus on retention and growth strategies for the segments that matter most.
+- Exporting: I saved the processed CSV so the Power BI report can load a stable, reproducible dataset.
 
-| Column             | Description                |
-|--------------------|----------------------------|
-| DonorID            | Unique donor identifier    |
-| FirstName          | Donor first name           |
-| LastName           | Donor last name            |
-| Email              | Contact email              |
-| Phone              | Contact number             |
-| City               | Donor city                 |
-| State              | Donor state                |
-| ZipCode            | Postal code                |
-| LastDonationDate   | Most recent donation date  |
-| TotalGifts         | Total number of donations  |
-| TotalAmountDonated | Total donation amount      |
-| EventParticipation | Event participation status |
-| EngagementScore    | Donor engagement score     |
+## Key insights
 
----
+- Revenue concentration: High-value donors generate the majority of revenue — retaining this small group is high priority.
+- Time trends: Monthly revenue shows clear peaks and troughs that inform campaign timing and seasonal planning.
+- Engagement correlation: Donors with higher engagement scores donate more on average, so increasing engagement should raise revenue.
+- Geographic patterns: A handful of states account for a disproportionate share of revenue, highlighting regional focus areas.
 
-##  Tools Used
+## How to reproduce
 
-- Microsoft Excel  
-- SQL  
-- Python (Pandas, NumPy, Matplotlib)  
-- Power BI  
-- Git & GitHub  
+1. Install Python dependencies (if not already available):
 
----
+```powershell
+pip install pandas numpy
+```
 
-## Data Cleaning
+2. Run the notebook to regenerate the processed CSV:
 
-The dataset was cleaned and prepared by:
+```powershell
+# from the project root
+python -m pip install -r requirements.txt  # optional if you maintain requirements
+# open and run notebooks/crm_analysis.ipynb in Jupyter or VS Code
+```
 
-- Handling missing values  
-- Removing duplicate records  
-- Standardizing date formats  
-- Validating donor information  
-- Correcting inconsistent entries  
+3. In Power BI Desktop: `Get Data` → `Text/CSV` → select `data/processed/cleaned_crm_data.csv` and build visuals.
 
----
-
-##  Exploratory Data Analysis
-
-###  Revenue Analysis
-- Total donation revenue  
-- Average donation amount  
-- Top contributing donors  
-- Revenue distribution  
-
----
-
-###  Donor Segmentation
-
-| Segment  | Donation Amount   |
-|----------|------------------|
-| Platinum | Above $15,000     |
-| Gold     | $10,000 – $15,000 |
-| Silver   | $5,000 – $10,000  |
-| Bronze   | Below $5,000      |
-
----
-
-###  Engagement Analysis
-- Engagement score distribution  
-- Donation amount by engagement level  
-- High-value donor identification  
-
----
-
-###  Event Participation Analysis
-- Participant vs non-participant comparison  
-- Impact of events on donation behavior  
-
----
-
-###  Geographic Analysis
-- Donations by state  
-- Donor distribution by location  
-- Regional fundraising performance  
-
----
-
-##  Dashboard Features
-
-###  Executive Summary
-- Total Revenue  
-- Total Donors  
-- Average Donation  
-- Average Engagement Score  
-
----
-
-###  Donor Insights
-- Top Donors  
-- Donor Segmentation  
-- Engagement Analysis  
-- Event Participation Impact  
-
----
-
-###  Geographic Analysis
-- Revenue by State  
-- Donor Distribution Map  
-- Regional Performance  
-
----
-
-##  Key Insights
-
-- High-engagement donors contribute significantly more revenue  
-- Event participants donate more frequently  
-- A small group of donors generates most revenue  
-- Geographic regions show different fundraising performance  
-
----
-
-##  Business Impact
-
-This project helps organizations to:
-
-- Improve donor retention  
-- Identify high-value donors  
-- Increase fundraising efficiency  
-- Support data-driven decision-making  
-- Enhance engagement strategies  
-
----
-
-##  Dashboard Preview
-(Add your Power BI screenshots here later)
-
-![Dashboard Overview](images/dashboard-overview.png)
-![Donor Insights](images/donor-insights.png)
-![Geographic Analysis](images/geographic-analysis.png)
-
----
-
-##  Project Structure
+## Project structure
 ```
 crm-powerbi-dashboard/
-│
 ├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── notebooks/
-├── dashboard/
-├── images/
+│   ├── raw/                  # original dataset
+│   └── processed/            # cleaned output (cleaned_crm_data.csv)
+├── notebooks/                # analysis notebook
+├── dashboard/                # Power BI files and report
+├── images/                   # screenshots and preview images
 └── README.md
 ```
-## 👨‍💻 Author
-**Asres Gamu Yelia**
-### Power BI Specialist | KPI Dashboards & Business Insights
 
-##  Connect With Me
-
-[LinkedIn](https://www.linkedin.com/in/asres-analytics)
-
-[Hire me](https://www.upwork.com/freelancers/~013847c2b7252ddb3f)
+## Author
+Asres Gamu Yelia — Power BI Specialist | KPI Dashboards & Business Insights
 
