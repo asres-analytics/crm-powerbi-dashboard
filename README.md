@@ -85,7 +85,7 @@ This project was created to analyze donor behavior, identify revenue patterns, a
 ## Quick Start
 
 ```bash
-git clone https://github.com/your-username/crm-powerbi-dashboard.git
+git clone https://github.com/asres-analytics/crm-powerbi-dashboard.git
 cd crm-powerbi-dashboard
 ```
 ## Usage
