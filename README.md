@@ -88,7 +88,26 @@ This project was created to analyze donor behavior, identify revenue patterns, a
 git clone https://github.com/your-username/crm-powerbi-dashboard.git
 cd crm-powerbi-dashboard
 ```
+## Usage
 
+This project is used to analyze donor CRM data and visualize insights through an interactive Power BI dashboard.
+
+### Steps
+
+1. Open and run the analysis notebook:
+
+```bash
+notebooks/crm_analysis.ipynb
+```
+## Contributing
+
+This project is currently maintained and developed by a single contributor.
+
+### Contributor
+
+- **Asres Gamu Yelia** – Project Developer and Data Analyst
+
+Suggestions and feedback are welcome. Feel free to fork the repository and submit improvements through a Pull Request.
 ## Author
 
 **Asres Gamu Yelia** 
