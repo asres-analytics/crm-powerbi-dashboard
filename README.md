@@ -78,7 +78,16 @@ crm-powerbi-dashboard/
 ├── images/
 └── README.md
 ```
+## Motivation
 
+This project was created to analyze donor behavior, identify revenue patterns, and demonstrate data analytics and Power BI dashboard development skills.
+
+## Quick Start
+
+```bash
+git clone https://github.com/your-username/crm-powerbi-dashboard.git
+cd crm-powerbi-dashboard
+```
 
 ## Author
 
